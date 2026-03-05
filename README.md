@@ -104,9 +104,11 @@ Authorization: Bearer <your_token>
 GET /tasks
 Authorization: Bearer <your_token>
 
-findSpecificTaskIdForAuthenticatedUser
+
+#findSpecificTaskIdForAuthenticatedUser
 GET /tasks/:id
 Authorization: Bearer <your_token>
+
 
 #updateSpecificTaskIdForAuthenticatedUser
 PATCH /tasks/:id
@@ -117,9 +119,11 @@ Authorization: Bearer <your_token>
   "status":"in_progress"
 }
 
+
 #deleteSpecificTaskIdForAuthenticatedUser
 DELETE /tasks/:id
 Authorization: Bearer <your_token>
+
 
 ```
 
