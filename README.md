@@ -22,7 +22,7 @@ $ npm run test:cov
 ```
 
 ## 2.Explanation of key architectural decisions.
-
+```bash
 task-management-app/
 ├── 📁 config/              # Configuration files (DB, JWT, Environment settings)
 ├── 📁 coverage/            # Test coverage reports (Auto-generated)
@@ -49,7 +49,7 @@ task-management-app/
 ├── 📄 .gitignore           # Specifies files and folders for Git to ignore
 ├── 📄 .prettierrc          # Code formatting rules (Prettier)
 └── 📄 docker-compose.yaml  # Docker services configuration (e.g., PostgreSQL container)
-
+```
 1. Global Type Management
 Custom Request Handling: Implemented in common/types/request.d.ts to extend standard requests with custom properties
 
@@ -72,7 +72,7 @@ Ownership Validation: Every request is validated to ensure the authenticated use
 ## Example requests for each API endpoint.
 
 Authentication Endpoint
-
+```bash
 #register
 POST /auth/register
 {
@@ -86,9 +86,10 @@ POST /auth/login
   "username": "anuwat_d",
   "password": "securePassword123"
 }
+```
 
 Task Management Endpoint 
-
+```bash
 #create task
 POST /tasks
 Authorization: Bearer <your_token>
@@ -114,6 +115,7 @@ Authorization: Bearer <your_token>
   "description": "Remove sync force:true from production config"
   "status":"in_progress"
 }
+```
 
 #deleteSpecificTaskIdForAuthenticatedUser
 DELETE /tasks/:id
