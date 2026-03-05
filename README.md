@@ -50,6 +50,7 @@ task-management-app/
 ├── 📄 .prettierrc          # Code formatting rules (Prettier)
 └── 📄 docker-compose.yaml  # Docker services configuration (e.g., PostgreSQL container)
 ```
+```bash
 1. Global Type Management
 Custom Request Handling: Implemented in common/types/request.d.ts to extend standard requests with custom properties
 
@@ -67,7 +68,7 @@ Maintainability: This decoupling makes the application easier to test and allows
 Strict Access Control: Beyond UseGuards for authentication, we implement Zero-Trust principles at the service layer.
 
 Ownership Validation: Every request is validated to ensure the authenticated user is the actual owner of the resource (e.g., a user can only edit their own tasks), preventing IDOR (Insecure Direct Object Reference) vulnerabilities.
-
+```
 
 ## Example requests for each API endpoint.
 
@@ -115,9 +116,10 @@ Authorization: Bearer <your_token>
   "description": "Remove sync force:true from production config"
   "status":"in_progress"
 }
-```
 
 #deleteSpecificTaskIdForAuthenticatedUser
 DELETE /tasks/:id
 Authorization: Bearer <your_token>
+
+```
 
