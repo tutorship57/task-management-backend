@@ -81,6 +81,7 @@ POST /auth/register
   "password": "securePassword123"
 }
 
+
 #login
 POST /auth/login
 {
