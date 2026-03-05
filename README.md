@@ -19,8 +19,9 @@ $ npm run test
 
 # test coverage
 $ npm run test:cov
+```
 
-## Explanation of key architectural decisions.
+## 2.Explanation of key architectural decisions.
 
 task-management-app/
 ├── 📁 config/              # Configuration files (DB, JWT, Environment settings)
