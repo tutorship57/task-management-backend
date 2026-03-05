@@ -38,7 +38,7 @@ task-management-app/
 │   │   ├── 📁 security/    # Security utilities (e.g., passwordHashing,verifyPassword)
 │   │   └── 📁 types/       # Global TypeScript interfaces and types
 │   ├── 📁 task/            # Task management module (Controller, Service, Entity)
-│   ├── 📁 user/            # User management module (Profile, Data management)
+│   ├── 📁 user/            # User management module (Data management)
 │   ├── 📄 app.controller.ts
 │   ├── 📄 app.module.ts    # Root module of the application
 │   ├── 📄 app.service.ts
