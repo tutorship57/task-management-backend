@@ -38,6 +38,7 @@ describe('TaskService', () => {
   describe('init', () => {
     it('should be defined', () => {
       expect(taskService).toBeDefined();
+      expect(taskRepository).toBeDefined();
     });
   });
 

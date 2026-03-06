@@ -47,6 +47,8 @@ describe('AuthService', () => {
   describe('init', () => {
     it('should be defined', () => {
       expect(authService).toBeDefined();
+      expect(securityService).toBeDefined();
+      expect(jwtService).toBeDefined();
     });
   });
 
@@ -59,14 +61,14 @@ describe('AuthService', () => {
       const spyVerifyPassword = jest
         .spyOn(securityService, 'verifyPassword')
         .mockResolvedValue(true);
-      const spySecurityService = jest.spyOn(securityService, 'hashPassword');
+      const spySecurityHash = jest.spyOn(securityService, 'hashPassword');
       await expect(
         authService.login(loginDto.email, loginDto.password),
       ).rejects.toThrow(UnauthorizedException);
 
       expect(spyFindByEmail).toHaveBeenCalledWith(loginDto.email);
       expect(spyVerifyPassword).not.toHaveBeenCalled();
-      expect(spySecurityService).not.toHaveBeenCalled();
+      expect(spySecurityHash).not.toHaveBeenCalled();
     });
 
     it('should throw UnauthorizedException when password is incorrect', async () => {
@@ -149,7 +151,7 @@ describe('AuthService', () => {
       const spyHashPassword = jest
         .spyOn(securityService, 'hashPassword')
         .mockResolvedValue(newPassword);
-      const spyCreate = jest
+      const spyUserCreate = jest
         .spyOn(userService, 'create')
         .mockResolvedValue(registerResult);
 
@@ -158,7 +160,7 @@ describe('AuthService', () => {
       expect(result).toEqual(registerResult);
       expect(spyFindByEmail).toHaveBeenCalledWith(registerDto.email);
       expect(spyHashPassword).toHaveBeenCalledWith(registerDto.password);
-      expect(spyCreate).toHaveBeenCalledWith(newRegisterData);
+      expect(spyUserCreate).toHaveBeenCalledWith(newRegisterData);
     });
   });
 });
